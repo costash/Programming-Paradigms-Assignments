@@ -1,0 +1,40 @@
+*** Constantin Serban-Radoi 323CA ***
+*** Tema 2 PP ***
+*** Aprilie 2012 ***
+
+* Tema consta in mutarea unui robotel pe o harta astfel incat el sa culeaga
+minerale, si sa nu faca mutari gresite (in gropi sau in afara minei).
+
+
+** Implementare **
+
+* Am definit memoria robotului ca fiind un tuplu de 3 elemente si anume:
+	primul --> dimensiunea hartii
+	al doilea --> locatia curenta
+	al treilea --> o lista de locatii vizitate
+
+* La start memoria este initializata cu dimensiunea hartii, pozitia de start
+(0,0) si o lista vida
+
+* Pentru a muta robotul se iau la rand punctele cardinale E,S,W,N si se face
+o mutare catre primul punct cardinal care da o locatie nevizitata si valida.
+Daca nu exista astfel de mutari, se apeleaza functia randomWalk
+
+* Functia randomWalk alege la intamplare un punct cardinal si face o mutare
+catre acel punct, daca locatia este valida. Altfel, robotul sta pe loc.
+
+
+** Observatii **
+
+* Robotul nu colecteaza optim mineralele, nefolosindu-se de informatiile de la
+senzori
+
+
+** Probleme intalnite pe parcurs **
+
+* Multe erori de sintaxa/sinteza a tipurilor
+
+* Blocarea robotului cand toate directiile (N,S,E,W) au fost vizitate, sau
+nu sunt valide
+
+* Folosirea elementului aleator pentru a rezolva blocajul

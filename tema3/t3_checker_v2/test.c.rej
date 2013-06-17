@@ -1,0 +1,10 @@
+--- test.c
++++ test.c
+@@ -561,7 +561,6 @@
+                        case 'B':
+                                w->bx = i;
+                                w->by = j;
+-                               w->world[i][j] = BALL;
+                                break;
+                        case 'M':
+ 

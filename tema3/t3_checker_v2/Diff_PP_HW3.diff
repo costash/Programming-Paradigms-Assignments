@@ -1,0 +1,49 @@
+commit 61e1180e7dea63b83aa0075545a260de622deef1
+Author: Mihai Maruseac <mihai@rosedu.org>
+Date:   Thu Apr 26 22:26:50 2012 +0300
+
+    Fix subtle comment bug. Allow individual testing.
+
+diff --git a/templates.clp b/templates.clp
+index d5b8ce5..e25939d 100644
+--- a/templates.clp
++++ b/templates.clp
+@@ -1,6 +1,6 @@
+ ; descrierea lumii
+ (deftemplate world
+-	(multislot limit) ; max size (orizontala, verticala)
++	(multislot limit) ; max size (linii, coloane)
+ 	(multislot ball) ; minge
+ 	(multislot men) ; pozitiile una dupa alta, x y -
+ 	(slot id) ; identificator pt lume
+diff --git a/test.c b/test.c
+index 4822fc0..b66e5b8 100644
+--- a/test.c
++++ b/test.c
+@@ -642,10 +642,25 @@ void test(int ix) {
+ 	}
+ }
+ 
+-int main()
++int main(int argc, char **argv)
+ {
+ 	int i;
+ 
++	if (argc > 1 && sscanf(argv[1], "%d", &i) && i > 0 && i < NUM_TESTS + 4) {
++		switch (i) {
++		case 1: test_results(1, build_initial_cmd(), NULL, NULL, 1);
++			break;
++		case 2: test_results(2, build_initial_cmd(), check_for_initial_fact, NULL, 1);
++			break;
++		case 3: test_results(3, build_initial_cmd(), check_for_extra_fact, NULL, 1);
++			break;
++		default: test(i - 4);
++		}
++		return 0;
++	} else if (argc > 1) {
++		fprintf(stderr, "Garbage on command line args, ignoring..\n");
++	}
++
+ 	test_results(1, build_initial_cmd(), NULL, NULL, 1); /* syntax check */
+ 	test_results(2, build_initial_cmd(), check_for_initial_fact, NULL, 1);
+ 	test_results(3, build_initial_cmd(), check_for_extra_fact, NULL, 1);

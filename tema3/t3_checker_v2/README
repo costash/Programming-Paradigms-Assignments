@@ -1,0 +1,29 @@
+*** Tema 3 PP ***
+*** Constantin Șerban-Rădoi 323CA ***
+*** Mai 2012 ***
+
+	Am început prin a crea un nou template în care să rețin path-ul
+și alte stări necesare.
+
+	Prima regulă constă în crearea și inițializarea unui path nou pornind
+de la lumea curentă.
+
+	A doua regulă, numită get-dirs, selectează toate direcțiile în care se poate
+deplasa mingea, cunoscând poziția mingii și, dacă se află în timpul unei sărituri
+și poziția curentă (omul peste care sar).
+	Dacă se găsește o astfel de direcție, se crează un nou fact de tipul path
+în care updatez poziția curentă (în timpul săriturii)
+
+	A 3-a regulă, numită compute-jump, execută efectiv mutarea mingii pe o
+nouă poziție în urma unei sărituri complete. Se resetează direcția de mers la 0
+ca să caut alte direcții posibile de mers.
+
+	Regula numită solutie, după cum îi spune și numele, verifică dacă am ajuns
+la o soluție și assert-uie faptul WIN.
+	Dacă am ajuns la victorie, șterg toate celelalte fapte, ca să termin
+execuția programului.
+
+	Timp de rulare: ~ 60 de secunde toate testele, pe un i7 2630QM
+
+	Probleme întâmpinate pe parcurs: Multe erori de sintaxă, și pattern-uri care
+nu se match-uiau complet

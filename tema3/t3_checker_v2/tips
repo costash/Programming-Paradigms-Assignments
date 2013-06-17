@@ -1,0 +1,94 @@
+<mmaruseacph2> ai o lume
+<mmaruseacph2> detectezi direcțiile în care poți sări
+<mmaruseacph2> detectezi lungimile salturilor
+<mmaruseacph2> obții n lumi
+<mmaruseacph2> rinse and repeat
+<mmaruseacph2> 4-5 reguli
+
+
+
+Vlad Stefan Grigorita: la PP am trimis de sambata sau ceva de genul
+Eu: mda
+Eu: bravo
+Eu: cum scoți lungimea săriturii
+Eu: având o listă de direcții
+Vlad Stefan Grigorita: pt fiecae directie
+Eu: (aka poziții adiacente în care am oameni)
+Vlad Stefan Grigorita: daca am un om in acea directie
+Vlad Stefan Grigorita: marchez directia aia ca si cum ar avea o posibilitate de salt
+Vlad Stefan Grigorita: celelalte le elimin (care nu au un omulet)
+Eu: bun
+Vlad Stefan Grigorita: pentru fiecare directie valida, tin o pozitie temporara a bilei care creste iin functie de directie
+Vlad Stefan Grigorita: si elimin omul in acelasi timp
+Vlad Stefan Grigorita: daca nu mai are nici un om 
+Vlad Stefan Grigorita: inseamna ca a terminat saltul
+Vlad Stefan Grigorita: si daca a terminat saltul, atunci e gata.. am facut un salt, continui cu urmatorul
+Eu: stai să îți arăt ce am făcut eu până acum
+Vlad Stefan Grigorita: eu am scris 300 randuri cu tot cu comentarii
+Vlad Stefan Grigorita: si fiecare subfapt din faptul de template e pe un rand al lui
+Eu: http://pastebin.com/ZmaSJNPW
+Eu: momentan
+Eu: n-am făcut decât să pun lista de direcții
+Eu: într-un fapt
+Eu: 
+Vlad Stefan Grigorita: nu stiu de ce
+Vlad Stefan Grigorita: dar toti care m-ati intrebat de tema
+Vlad Stefan Grigorita: ati descompus acel fapt world
+Vlad Stefan Grigorita: adica ai un deftemplate path si dirctions
+Vlad Stefan Grigorita: ar trebui sa tii intr-un template toate informatiile
+Vlad Stefan Grigorita: ca la ultimele teste.. ai mai multe world primite la intrare
+Eu: păi știu
+Eu: da oricum am solt id
+Eu: deci identificatoru' ăla mă ajută
+Vlad Stefan Grigorita: nvm...
+Vlad Stefan Grigorita: si faci totul secvential?
+Vlad Stefan Grigorita: adica cate o varianta pe rand?
+Vlad Stefan Grigorita: gen DFS?
+Eu: e un fel de bkt
+Eu: sau dfs
+Eu: da tot aia
+Vlad Stefan Grigorita: si asta inseamna ca trebuie sa te intorci ?
+Vlad Stefan Grigorita: //din recursivitate/drum
+Eu: nu neapărat
+Eu: vreau să construiesc câte un nou path
+Eu: pentru fiecare salt
+Eu: gen
+Eu: să se extindă automat
+Vlad Stefan Grigorita: mda.. nu stiu mie ca te complici, mie lene sa vad exact ce se intampla -.-
+Vlad Stefan Grigorita: ma oftic ca la PA , tema 3 nu merge, ca nu cred ca construiesc bine graful si la DNS nu exista documentatie clar care sa zica care e formatul mesajelor la DNS
+Eu: deci ce am făcut eu acolo
+Eu: pe scurt
+Eu: initializez un path
+Eu: cu poziția mingii de la start
+Eu: creez lista de direcții adiacente poziției mingii
+Eu: și apoi ar trebui în funcție de aia
+Vlad Stefan Grigorita: pana aici e bine
+Eu: să calculez lungimea săriturii
+Eu: dar nu știu exact cum să fac
+Eu: adică tre' să creez câte un path pt fiecare săritură
+Vlad Stefan Grigorita: da, creezi un path pt fiecare saritura
+Vlad Stefan Grigorita: si in acel path unde are loc saritura
+Eu: dar cum aflu cât sar
+Vlad Stefan Grigorita: salvezi directia in care se duce bila
+Vlad Stefan Grigorita: si avansezi cate 1, cate 1
+Vlad Stefan Grigorita: cat timp ai un om
+Vlad Stefan Grigorita: in calea bilei
+Vlad Stefan Grigorita: daca initial nu ai nici un om, elimini faptul
+Vlad Stefan Grigorita: daca ai gasit initial un om, merge cate 1 cate 1, si la final faci "commit" si finalizezi mutarea
+Eu: păi lista de direcții conține direcțiile în care am om adiacent bilei
+Eu: adică pozițiile
+Vlad Stefan Grigorita: creezi noi pathuri in care retii o singura directie activa
+Eu: tu ai făcut 8 reguli?
+Vlad Stefan Grigorita: 8
+Vlad Stefan Grigorita: nu
+Eu: sau cum ai făcut efectiv avansarea
+Eu: că sunt 8 directii
+Vlad Stefan Grigorita: e un principiu in informatica.. (pe care l-am descoperit eu)
+Eu: și tre' să vezi cum te miști
+Vlad Stefan Grigorita: daca nu stii ceva..
+Vlad Stefan Grigorita: creez variabile in plus ca sa retii informatii
+Vlad Stefan Grigorita: adica.. in acel path al tau
+Vlad Stefan Grigorita: marchezi faptul ca executi un salt
+Vlad Stefan Grigorita: si retii directia saltului
+Vlad Stefan Grigorita: si avansezi cat timp ai oameni
+Eu: crap

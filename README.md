@@ -1,4 +1,4 @@
-Teme_PP
+Programming Paradigms Assignments
 =======
 
-PP Assignments
+This repo contains the Haskell assignment and the CLIPS assignments fromt the PP class.
